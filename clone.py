@@ -10,7 +10,7 @@ with open('./data/sample/data/driving_log.csv') as csvfile:
 
 images = []
 measurements = [] 
-for line in lines:
+for line in lines[1:]:
   source_path = line[0]
   tokens = source_path.split('/')
   filename = tokens[-1]
@@ -19,6 +19,9 @@ for line in lines:
   images.append(image)
   measurement = line[3]
   measurements.append(measurement)
+
+print('image shape:', images.shape)
+print('measurement shape:', measurements.shape)
 
 X_train = np.array(images)
 y_train = np.array(measurements)
