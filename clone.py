@@ -20,9 +20,6 @@ for line in lines[1:]:
   measurement = line[3]
   measurements.append(measurement)
 
-print('image shape:', images.shape)
-print('measurement shape:', measurements.shape)
-
 X_train = np.array(images)
 y_train = np.array(measurements)
 
